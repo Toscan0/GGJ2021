@@ -4,6 +4,8 @@ public class EnterRoom : MonoBehaviour
 {
     [SerializeField]
     private GameObject NextRoom;
+    [SerializeField]
+    private GameObject NextRoomPassage;
 
     public bool ChangeRoom = false;
 
@@ -27,10 +29,19 @@ public class EnterRoom : MonoBehaviour
         }
     }
 
-    public void GoTo() 
+    public void GoTo(GameObject gameObject) 
     {
         var currentRoom = Camera.main.GetComponent<CurrentRoom>();
 
         currentRoom.EnterRoom(NextRoom.gameObject.transform.position);
+
+        var player = gameObject.GetComponent<EnterRoomPlayer>();
+        if (player != null) 
+        { player.EnterRoom(NextRoomPassage.transform.position); }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        GoTo(collision.gameObject);
     }
 }
