@@ -16,6 +16,7 @@ public class EnterRoom : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Here for testing purposes
         if (ChangeRoom && NextRoom != null) 
         {
             var currentRoom = Camera.main.GetComponent<CurrentRoom>();
@@ -24,5 +25,12 @@ public class EnterRoom : MonoBehaviour
 
             ChangeRoom = false;
         }
+    }
+
+    public void GoTo() 
+    {
+        var currentRoom = Camera.main.GetComponent<CurrentRoom>();
+
+        currentRoom.EnterRoom(NextRoom.gameObject.transform.position);
     }
 }
