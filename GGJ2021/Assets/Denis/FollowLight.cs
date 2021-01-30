@@ -6,14 +6,13 @@ public class FollowLight : MonoBehaviour
 {
     public float moveSpeed = 10;
     public float stoppingSpeed = 3;
+    
     private float currentMovSpeed = 0;
-
-
 
     private Rigidbody2D rb;
     private Vector3 movDir;
     private bool stopMovement = false;
-    // Start is called before the first frame update
+
     void Start()
     {
         rb = this.GetComponent<Rigidbody2D>();
