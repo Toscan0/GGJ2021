@@ -13,6 +13,7 @@ public class EnterRoomPlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
     }
 
     // Update is called once per frame
@@ -39,5 +40,12 @@ public class EnterRoomPlayer : MonoBehaviour
         {
             NextPosition = new Vector3(position.x, position.y, gameObject.transform.position.z);
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        var passage = collision.gameObject.GetComponent<EnterRoom>();
+        if (passage != null) 
+        { NextPosition = null; }
     }
 }
