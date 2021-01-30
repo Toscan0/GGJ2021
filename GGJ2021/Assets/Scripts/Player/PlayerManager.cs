@@ -35,7 +35,7 @@ public class PlayerManager : MonoBehaviour
 
     private void Start()
     {
-       // RotateFlashlight();
+        RotateFlashlight();
     }
     
     void Update()

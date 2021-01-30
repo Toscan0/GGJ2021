@@ -13,9 +13,7 @@ public class FieldOfView : MonoBehaviour
     [SerializeField]
     private float startingAngle = 15f;
 
-
     private Vector3 origin;
-    
 
     private Mesh mesh;
 
@@ -24,7 +22,7 @@ public class FieldOfView : MonoBehaviour
         mesh = new Mesh();
         GetComponent<MeshFilter>().mesh = mesh;
 
-        origin = transform.localPosition; //Vector3.zero;//flashlight.position;
+        origin = Vector3.zero;
     }
 
     private void LateUpdate()
@@ -46,6 +44,7 @@ public class FieldOfView : MonoBehaviour
             Vector3 vertex;
             RaycastHit2D raycastHit2D = Physics2D.Raycast(origin, 
                 GetVectorFromAngle(angle), viewDistance, layerMask);
+
             if (raycastHit2D.collider == null)
             {
                 // No hit
