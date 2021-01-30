@@ -17,7 +17,7 @@ public class CurrentRoom : MonoBehaviour
     {
         if (NextPosition.HasValue) 
         {
-            TransitionRate = TransitionSpeed * Time.deltaTime;
+            TransitionRate += TransitionSpeed * Time.deltaTime;
 
             gameObject.transform.position = Vector3.Lerp(gameObject.transform.position, NextPosition.Value, TransitionRate);
 
