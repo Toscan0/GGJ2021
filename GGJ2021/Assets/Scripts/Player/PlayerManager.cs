@@ -6,6 +6,8 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerMovement))]
 public class PlayerManager : MonoBehaviour
 {
+    public bool IsGrounded { private get; set; } = false;
+
     [SerializeField]
     private float movementSpeed = 5f;
     [SerializeField]
@@ -13,9 +15,6 @@ public class PlayerManager : MonoBehaviour
 
     private float horizontalMove = 0f;
     private bool jump = false;
-
-    public bool IsGrounded { private get; set; } = false;
-    
 
     private PlayerMovement playerMovement;
 
