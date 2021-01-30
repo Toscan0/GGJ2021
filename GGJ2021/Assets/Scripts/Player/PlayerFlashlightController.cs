@@ -8,11 +8,11 @@ public class PlayerFlashlightController : MonoBehaviour
     [SerializeField]
     private GameObject flashlight;
     [SerializeField]
-    private float shrinkTime = 2;
+    private float shrinkTime = 300;
     [SerializeField]
-    private float minShrinkRadius = 1;
+    private float minShrinkRadius = 3;
 
-    public float timeBeforeShrink = 1f;
+    public float timeBeforeShrink = 2f;
 
     private float initialOuterRadius;
     private float currentShrinkTime;
