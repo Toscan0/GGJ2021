@@ -1,9 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(PlayerMovement))]
+[RequireComponent(typeof(PlayerSoundManager))]
 public class PlayerManager : MonoBehaviour
 {
     public bool IsGrounded { private get; set; } = false;
@@ -12,15 +11,19 @@ public class PlayerManager : MonoBehaviour
     private float movementSpeed = 5f;
     [SerializeField]
     private float jumpForce = 5f;
+    [SerializeField]
+    private AudioClip jumpSound;
 
     private float horizontalMove = 0f;
     private bool jump = false;
 
     private PlayerMovement playerMovement;
+    private PlayerSoundManager playerSoundManager;
 
     private void Start()
     {
         playerMovement = GetComponent<PlayerMovement>();
+        playerSoundManager = GetComponent<PlayerSoundManager>();
     }
 
     void Update()
@@ -40,8 +43,10 @@ public class PlayerManager : MonoBehaviour
     {
         if (jump)
         {
-            playerMovement.Jump(jumpForce);
             jump = false;
+
+            playerMovement.Jump(jumpForce);
+            playerSoundManager.PlaySound(jumpSound);
         }
     }
 }
