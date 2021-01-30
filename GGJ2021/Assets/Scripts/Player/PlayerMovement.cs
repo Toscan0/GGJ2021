@@ -3,16 +3,32 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour
 {
-    private Rigidbody2D rb2d;
+    private new Rigidbody2D rigidbody;
 
     [SerializeField]
     private Animator animator;
     [SerializeField]
     private SpriteRenderer spriteRenderer;
 
+    private bool falling = false;
     private void Awake()
     {
-        rb2d = GetComponent<Rigidbody2D>();
+        rigidbody = GetComponent<Rigidbody2D>();
+    }
+
+    private void Update()
+    {
+        if (rigidbody.velocity.y < 0)
+        {
+            falling = true;
+            animator.SetBool("Falling", true);
+        }
+        else if(falling)
+        {
+            animator.SetBool("Falling", false);
+            falling = false;
+        }
+
     }
 
     internal void Move(Vector3 f)
@@ -33,6 +49,8 @@ public class PlayerMovement : MonoBehaviour
 
     internal void Jump(float jumpForce)
     {
-        rb2d.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+        animator.SetTrigger("Jumping");
+
+        rigidbody.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
     }
 }

@@ -1,11 +1,19 @@
 using UnityEngine;
 
+public enum EntranceSide
+{
+    Right,
+    Left
+}
+
 public class EnterRoom : MonoBehaviour
 {
     [SerializeField]
     private GameObject NextRoom;
     [SerializeField]
     private GameObject NextRoomPassage;
+    [SerializeField]
+    private EntranceSide EntranceSide;
 
     public bool ChangeRoom = false;
 
@@ -36,7 +44,8 @@ public class EnterRoom : MonoBehaviour
         {
             var currentRoom = Camera.main.GetComponent<CurrentRoom>();
             currentRoom.EnterRoom(NextRoom.gameObject.transform.position);
-            player.EnterRoom(NextRoomPassage.transform.position); 
+
+            player.EnterRoom(NextRoomPassage.GetComponent<EnterRoom>(), EntranceSide);
         }
     }
 
