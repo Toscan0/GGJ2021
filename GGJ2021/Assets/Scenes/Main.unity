@@ -9532,6 +9532,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flashlight: {fileID: 51504915}
+  shrinkTime: 1000
+  minShrinkRadius: 3
+  timeBeforeShrink: 2
 --- !u!114 &445354367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11739,7 +11742,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 063af2f09fc0e9744982031266ac9f9c, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -11757,6 +11760,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  stoppingSpeed: 3
 --- !u!61 &1828072471
 BoxCollider2D:
   m_ObjectHideFlags: 0
