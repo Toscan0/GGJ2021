@@ -20,22 +20,28 @@ public class PlayerManager : MonoBehaviour
     private float horizontalMove = 0f;
     private bool jump = false;
     private bool isFlashlightOn = false;
+    private Vector3 mousePosition;
 
     private PlayerMovement playerMovement;
     private PlayerSoundManager playerSoundManager;
     private PlayerFlashlightController playerFlashlight;
 
-    private void Start()
+    private void Awake()
     {
         playerMovement = GetComponent<PlayerMovement>();
         playerSoundManager = GetComponent<PlayerSoundManager>();
         playerFlashlight = GetComponent<PlayerFlashlightController>();
     }
 
+    private void Start()
+    {
+       // RotateFlashlight();
+    }
+    
     void Update()
     {
+        // move player
         horizontalMove = Input.GetAxis("Horizontal");
-
         playerMovement.Move(transform.right * horizontalMove * 
             Time.deltaTime * movementSpeed);
 
@@ -44,12 +50,23 @@ public class PlayerManager : MonoBehaviour
             jump = true;
         }
 
+        //Turn on/off flashlight
         if (Input.GetButtonDown("Fire1"))
         {
             isFlashlightOn = !isFlashlightOn;
 
             playerFlashlight.ToggleFlashlight(isFlashlightOn);
             playerSoundManager.PlaySound(flashlightSound);
+        }
+
+        // Rotate Flashlight and player
+        if (isFlashlightOn)
+        {
+            RotateFlashlight();
+
+            /*
+             * TODO: Rotate Player
+             */
         }
     }
 
@@ -62,5 +79,17 @@ public class PlayerManager : MonoBehaviour
             playerMovement.Jump(jumpForce);
             playerSoundManager.PlaySound(jumpSound);
         }
+    }
+
+    private void GetMousePositon()
+    {
+        var mousePosAux = Input.mousePosition;
+        mousePosition = Camera.main.ScreenToWorldPoint(mousePosAux);
+    }
+
+    private void RotateFlashlight()
+    {
+        GetMousePositon();
+        playerFlashlight.RotateFlashlight(mousePosition);
     }
 }
