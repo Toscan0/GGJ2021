@@ -3,6 +3,7 @@ using UnityEngine;
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(PlayerMovement))]
 [RequireComponent(typeof(PlayerSoundManager))]
+[RequireComponent(typeof(PlayerFlashlightController))]
 public class PlayerManager : MonoBehaviour
 {
     public bool IsGrounded { private get; set; } = false;
@@ -16,14 +17,17 @@ public class PlayerManager : MonoBehaviour
 
     private float horizontalMove = 0f;
     private bool jump = false;
+    private bool isFlashlightOn = false;
 
     private PlayerMovement playerMovement;
     private PlayerSoundManager playerSoundManager;
+    private PlayerFlashlightController playerFlashlight;
 
     private void Start()
     {
         playerMovement = GetComponent<PlayerMovement>();
         playerSoundManager = GetComponent<PlayerSoundManager>();
+        playerFlashlight = GetComponent<PlayerFlashlightController>();
     }
 
     void Update()
@@ -36,6 +40,13 @@ public class PlayerManager : MonoBehaviour
         if (IsGrounded && Input.GetButtonDown("Jump"))
         {
             jump = true;
+        }
+
+        if (Input.GetButtonDown("Fire1"))
+        {
+            isFlashlightOn = !isFlashlightOn;
+
+            playerFlashlight.ToggleFlashlight(isFlashlightOn);
         }
     }
 
