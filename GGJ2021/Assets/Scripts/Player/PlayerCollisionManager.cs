@@ -2,15 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(PlayerManager))]
+[RequireComponent(typeof(Collider2D))]
 public class PlayerCollisionManager : MonoBehaviour
 {
+    [SerializeField]
     private PlayerManager playerManager;
-
-    private void Awake()
-    {
-        playerManager = GetComponent<PlayerManager>();
-    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

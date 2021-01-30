@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal; 
 
-
+[RequireComponent(typeof(BoxCollider2D))]
 public class LightDetector : MonoBehaviour
 {
     [SerializeField]
@@ -12,14 +12,15 @@ public class LightDetector : MonoBehaviour
     private float lightIntensity = 1;
 
     private float timerLock;
-    private bool isLightOn = false;
     private bool turnOff = false;
 
     private new Light2D light;
+    private BoxCollider2D boxCollider2D;
 
     private void Awake()
     {
         light = platformerLight.GetComponent<Light2D>();
+        boxCollider2D = GetComponent<BoxCollider2D>();
     }
 
     private void Start()
@@ -31,11 +32,11 @@ public class LightDetector : MonoBehaviour
     {
         if (collision.tag == "Light")
         {
-            isLightOn = true;
             turnOff = false;
 
             platformerLight.SetActive(true);
             light.intensity = lightIntensity;
+            boxCollider2D.isTrigger = false;
         }
     }
 
@@ -71,7 +72,7 @@ public class LightDetector : MonoBehaviour
             light.intensity = 0;
 
             turnOff = false;
-            isLightOn = false;
+            boxCollider2D.isTrigger = true;
         }
     }
 
