@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 51504916}
   - component: {fileID: 51504917}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Flashlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147,7 +147,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 51504915}
-  m_LocalRotation: {x: -0, y: -0, z: -0.6241566, w: 0.7812993}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -936,7 +936,7 @@ GameObject:
   m_Component:
   - component: {fileID: 261658036}
   - component: {fileID: 261658037}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1196,7 +1196,7 @@ GameObject:
   - component: {fileID: 445354366}
   - component: {fileID: 445354377}
   - component: {fileID: 445354371}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1526,6 +1526,7 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1611,6 +1612,38 @@ Transform:
   m_Father: {fileID: 1931121614}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!1 &542517733
 GameObject:
   m_ObjectHideFlags: 0
@@ -1813,7 +1846,7 @@ GameObject:
   m_Component:
   - component: {fileID: 634774436}
   - component: {fileID: 634774437}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Aura
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1886,7 +1919,7 @@ GameObject:
   - component: {fileID: 681723905}
   - component: {fileID: 681723907}
   - component: {fileID: 681723906}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Arrow
   m_TagString: Light
   m_Icon: {fileID: 0}
@@ -1900,13 +1933,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 681723904}
-  m_LocalRotation: {x: -0, y: -0, z: -0.99999094, w: 0.0042754705}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2.7655678, y: 3.659041, z: 1}
   m_Children: []
   m_Father: {fileID: 51504916}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -179.51}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!60 &681723906
 PolygonCollider2D:
   m_ObjectHideFlags: 0
