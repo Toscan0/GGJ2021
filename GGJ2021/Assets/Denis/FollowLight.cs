@@ -36,7 +36,10 @@ public class FollowLight : MonoBehaviour
 
     void MoveCharacter(Vector3 direction)
     {
-        Vector2 aux = transform.position + (direction * moveSpeed * Time.deltaTime);
-        rb.MovePosition(aux);
+        if(movDir != Vector3.zero)
+        {
+            Vector2 aux = transform.position + (direction * moveSpeed * Time.deltaTime);
+            rb.MovePosition(aux);
+        }
     }
 }

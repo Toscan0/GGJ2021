@@ -31,13 +31,13 @@ public class EnterRoom : MonoBehaviour
 
     public void GoTo(GameObject gameObject) 
     {
-        var currentRoom = Camera.main.GetComponent<CurrentRoom>();
-
-        currentRoom.EnterRoom(NextRoom.gameObject.transform.position);
-
         var player = gameObject.GetComponent<EnterRoomPlayer>();
         if (player != null) 
-        { player.EnterRoom(NextRoomPassage.transform.position); }
+        {
+            var currentRoom = Camera.main.GetComponent<CurrentRoom>();
+            currentRoom.EnterRoom(NextRoom.gameObject.transform.position);
+            player.EnterRoom(NextRoomPassage.transform.position); 
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
