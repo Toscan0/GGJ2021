@@ -14,6 +14,8 @@ public class PlayerManager : MonoBehaviour
     private float jumpForce = 5f;
     [SerializeField]
     private AudioClip jumpSound;
+    [SerializeField]
+    private AudioClip flashlightSound;
 
     private float horizontalMove = 0f;
     private bool jump = false;
@@ -47,6 +49,7 @@ public class PlayerManager : MonoBehaviour
             isFlashlightOn = !isFlashlightOn;
 
             playerFlashlight.ToggleFlashlight(isFlashlightOn);
+            playerSoundManager.PlaySound(flashlightSound);
         }
     }
 
