@@ -14,11 +14,7 @@ public class PlayerManager : MonoBehaviour
     private float horizontalMove = 0f;
     private bool jump = false;
 
-    public bool IsGrounded
-    {
-        private get { return IsGrounded; }
-        set { IsGrounded = value; }
-    }
+    public bool IsGrounded { private get; set; } = false;
     
 
     private PlayerMovement playerMovement;
@@ -32,10 +28,10 @@ public class PlayerManager : MonoBehaviour
     {
         horizontalMove = Input.GetAxis("Horizontal");
 
-        playerMovement.Move2(transform.right * horizontalMove * 
+        playerMovement.Move(transform.right * horizontalMove * 
             Time.deltaTime * movementSpeed);
 
-        if (Input.GetButtonDown("Jump"))
+        if (IsGrounded && Input.GetButtonDown("Jump"))
         {
             jump = true;
         }
@@ -43,9 +39,7 @@ public class PlayerManager : MonoBehaviour
 
     void FixedUpdate()
     {
-        //playerMovement.Move(horizontalMove * movementSpeed);
-
-        if (jump && !IsGrounded)
+        if (jump)
         {
             playerMovement.Jump(jumpForce);
             jump = false;

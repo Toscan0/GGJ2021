@@ -14,7 +14,7 @@ public class PlayerCollisionManager : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Floor")
+        if (collision.gameObject.tag == "Ground")
         {
             playerManager.IsGrounded = true;
         }
@@ -22,7 +22,7 @@ public class PlayerCollisionManager : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Floor")
+        if (collision.gameObject.tag == "Ground")
         {
             playerManager.IsGrounded = false;
         }

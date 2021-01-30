@@ -13,12 +13,7 @@ public class PlayerMovement : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();    
     }
 
-    internal void Move(float f)
-    {
-        rb2d.AddForce(new Vector2(f, 0), ForceMode2D.Force);
-    }
-
-    internal void Move2(Vector3 f)
+    internal void Move(Vector3 f)
     {
         transform.position += f;
     }
