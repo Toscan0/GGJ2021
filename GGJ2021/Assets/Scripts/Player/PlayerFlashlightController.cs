@@ -15,6 +15,6 @@ public class PlayerFlashlightController : MonoBehaviour
         Vector2 dir = new Vector2(mousePos.x - flashlight.transform.position.x,
             mousePos.y - flashlight.transform.position.y);
 
-        flashlight.transform.right = dir;
+        flashlight.transform.up = dir;
     }
 }
