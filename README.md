@@ -12,7 +12,7 @@ Humanity didn´t deserve your light and soul\
 Trapped in the cavern of The Lost Hope\
 You try to find something to make you feel whole." - Denis Voicu.
 
-The Flashlight is a 2D platformer with pixel art where Beacon(you) has to use the Light advance through the game and find The Holy Moly.
+The Flashlight is a 2D platformer with pixel art where Beacon(you) has to use the Light to advance through the game and find The Holy Moly.
 
 ## Useful Links
 
