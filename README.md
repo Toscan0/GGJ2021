@@ -12,6 +12,12 @@ You try to find something to make you feel whole." - Denis Voicu.
 
 The Flashlight is a 2D platformer with pixel art where Beacon(you) has to use the Light advance through the game and find The Holy Moly. A video of the game can be seen [here](https://youtu.be/yjudWNQ_lb8). And the delivery page [here](https://globalgamejam.org/2021/games/flashlight-3).
 
+## Useful Links
+
+* [Gameplay](https://youtu.be/yjudWNQ_lb8)
+* [Home page](https://globalgamejam.org/2021/games/flashlight-3)
+* [Release](https://github.com/Toscan0/GGJ2021/releases)
+
 ## Members
 
 * [Denis Voicu](https://github.com/Smeurfy)
