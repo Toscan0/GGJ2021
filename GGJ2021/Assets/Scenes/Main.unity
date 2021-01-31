@@ -17383,8 +17383,8 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!60 &301419183
-PolygonCollider2D:
+--- !u!61 &301419183
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -17396,7 +17396,7 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.13457823, y: -0.15884614}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -17406,36 +17406,9 @@ PolygonCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -0.322044, y: -0.55600786}
-      - {x: 0.07841337, y: -0.55499554}
-      - {x: 0.080592506, y: -0.4225564}
-      - {x: 0.14005505, y: -0.39900017}
-      - {x: 0.13700908, y: -0.30821243}
-      - {x: 0.06019532, y: -0.12039518}
-      - {x: 0.072296984, y: -0.024594918}
-      - {x: 0.12870854, y: 0.062822625}
-      - {x: 0.13644157, y: 0.2409873}
-      - {x: 0.10741707, y: 0.32861084}
-      - {x: 0.09689191, y: 0.35425657}
-      - {x: 0.23588736, y: 0.23114896}
-      - {x: 0.29358843, y: 0.28229746}
-      - {x: 0.13036667, y: 0.43267202}
-      - {x: 0.06588543, y: 0.45435426}
-      - {x: 0.011674611, y: 0.45435473}
-      - {x: -0.016268581, y: 0.4267942}
-      - {x: -0.025524735, y: 0.40440083}
-      - {x: -0.029062867, y: 0.3715515}
-      - {x: 0.024113618, y: 0.21473742}
-      - {x: -0.1767947, y: 0.21756004}
-      - {x: -0.27153164, y: 0.097176895}
-      - {x: -0.271834, y: 0.06616449}
-      - {x: -0.31268013, y: -0.02282263}
-      - {x: -0.38794318, y: -0.26961732}
-      - {x: -0.40073356, y: -0.39292765}
-      - {x: -0.3334464, y: -0.3919143}
-      - {x: -0.3226076, y: -0.5050323}
+  serializedVersion: 2
+  m_Size: {x: 0.5254812, y: 0.75933695}
+  m_EdgeRadius: 0
 --- !u!50 &301419184
 Rigidbody2D:
   serializedVersion: 4
@@ -31213,7 +31186,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8628709109347095194, guid: 5cb15a52004912d47ad80396ce7c84dd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 18.74
+      value: 25.71
       objectReference: {fileID: 0}
     - target: {fileID: 8628709109347095194, guid: 5cb15a52004912d47ad80396ce7c84dd, type: 3}
       propertyPath: m_LocalPosition.y
