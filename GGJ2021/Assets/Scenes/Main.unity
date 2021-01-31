@@ -24981,7 +24981,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de3dd889cc2855448b6463807fb5886b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerName: Room3
+  triggerName: Room4
 --- !u!95 &474303392
 Animator:
   serializedVersion: 3
@@ -40260,7 +40260,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomLight: {fileID: 474303390}
-  triggerName: Room3
+  triggerName: Room4
 --- !u!95 &1573766194
 Animator:
   serializedVersion: 3
