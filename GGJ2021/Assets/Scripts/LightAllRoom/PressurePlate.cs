@@ -4,13 +4,16 @@ using UnityEngine;
 public class PressurePlate : MonoBehaviour
 {
     [SerializeField]
-    private GameObject particles;
+    private GameObject[] particles;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
         {
-            particles.SetActive(true);
+            foreach(var ps in particles)
+            {
+                ps.SetActive(true);
+            }
         }
     }
 }
