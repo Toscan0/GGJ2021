@@ -5,7 +5,11 @@ public class BackgroundMusic : MonoBehaviour
 {
     [SerializeField]
     private AudioClip[] clips;
+    [SerializeField]
     private int currentClip = 0;
+
+    [SerializeField]
+    private bool Randomize = false;
 
     private bool stopPlaying = false;
     public bool StopPlaying
@@ -47,13 +51,23 @@ public class BackgroundMusic : MonoBehaviour
 
     private AudioClip GetNextClip()
     {
-        AudioClip clip = clips[currentClip];
-
-        currentClip++;
-
-        if (currentClip >= clips.Length)
+        AudioClip clip = null;
+        if (Randomize)
         {
-            currentClip = 0;
+            currentClip = Random.Range(0, clips.Length - 1);
+
+            clip = clips[currentClip];
+        }
+        else
+        {
+            clip = clips[currentClip];
+
+            currentClip++;
+
+            if (currentClip >= clips.Length)
+            {
+                currentClip = 0;
+            }
         }
 
         return clip;

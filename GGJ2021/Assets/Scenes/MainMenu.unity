@@ -2896,13 +2896,33 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1256931063154431103, guid: f9f645314b885c749973924834715b05, type: 3}
-      propertyPath: clips.Array.size
+      propertyPath: Randomize
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1256931063154431103, guid: f9f645314b885c749973924834715b05, type: 3}
+      propertyPath: clips.Array.size
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1256931063154431103, guid: f9f645314b885c749973924834715b05, type: 3}
       propertyPath: clips.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: 54bb6cf29738e30478c1083c5f26157c, type: 3}
+      objectReference: {fileID: 8300000, guid: e6fd40b2634b38346877f0b767a45eec, type: 3}
+    - target: {fileID: 1256931063154431103, guid: f9f645314b885c749973924834715b05, type: 3}
+      propertyPath: clips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 00e7ccb7a53f99a438ef762e514dda27, type: 3}
+    - target: {fileID: 1256931063154431103, guid: f9f645314b885c749973924834715b05, type: 3}
+      propertyPath: clips.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 56e227777a5fd4245882167ddfea3559, type: 3}
+    - target: {fileID: 1256931063154431103, guid: f9f645314b885c749973924834715b05, type: 3}
+      propertyPath: clips.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: ea8dfa559d083a7418f8da4e1bbb05a5, type: 3}
+    - target: {fileID: 1256931063154431103, guid: f9f645314b885c749973924834715b05, type: 3}
+      propertyPath: clips.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: 56e227777a5fd4245882167ddfea3559, type: 3}
     - target: {fileID: 4818045222591165176, guid: f9f645314b885c749973924834715b05, type: 3}
       propertyPath: m_Name
       value: BackgroundMusic
