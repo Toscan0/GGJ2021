@@ -2,6 +2,8 @@ using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal; 
 
 [RequireComponent(typeof(BoxCollider2D))]
+[RequireComponent(typeof(SpriteRenderer))]
+[RequireComponent(typeof(ShadowCaster2D))]
 public class LightDetector : MonoBehaviour
 {
     [SerializeField]
@@ -16,11 +18,15 @@ public class LightDetector : MonoBehaviour
 
     private new Light2D light;
     private BoxCollider2D boxCollider2D;
+    private SpriteRenderer spriteRenderer;
+    private ShadowCaster2D shadowCaster2D;
 
     private void Awake()
     {
         light = platformerLight.GetComponent<Light2D>();
         boxCollider2D = GetComponent<BoxCollider2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        shadowCaster2D = GetComponent<ShadowCaster2D>();
     }
 
     private void Start()
@@ -36,7 +42,10 @@ public class LightDetector : MonoBehaviour
 
             platformerLight.SetActive(true);
             light.intensity = lightIntensity;
+
             boxCollider2D.isTrigger = false;
+            spriteRenderer.enabled = true;
+            shadowCaster2D.enabled = true;
         }
     }
 
@@ -73,6 +82,9 @@ public class LightDetector : MonoBehaviour
 
             turnOff = false;
             boxCollider2D.isTrigger = true;
+            spriteRenderer.enabled = false;
+            shadowCaster2D.enabled = false;
+
         }
     }
 

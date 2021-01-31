@@ -1,7 +1,11 @@
-# GGJ2021
-Global Game Jam 2021
+# The Flashlight
+Game developed to the Global Game Jam 2021
 
 Theme: Lost and Found
+
+Description: 
+
+Video: 
 
 ## Members
 
